@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Copy and Download Plugin</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="copyDownloadPlug.js"></script>
+		<script>$(document).keyup(copyAndDownload);</script>
+		<style>
+		form * {
+		  display: block;
+		  margin: 10px;
+		}
+		#copyText { 
+			background-color: rgba(255, 0, 0, 0.2);
+		}
+		#fileName { 
+			background-color: rgba(255, 0, 0, 0.2);
+		}
+		</style>
+
+	</head>
+
+	<body>
+		<h1>Copy and download plugin</h1>
+		<p>
+				This is an add-on that allows you to easily  <br>
+				copy and paste texts found while browsing 	 <br>
+				on the internet into a text file. 			 <br>
+				If you select the text you want and 		 <br>
+				press ctrl + c and then ctrl + m, 			 <br>
+				text is copied and you can download any time.<br>
+		</p>
+		
+		<br>
+		
+		<div>Please press ctrl + m and then ctrl + c for copy selected text.</div>
+		
+		<div id="test">The text you copied is below.</div>
+		
+		<form onsubmit="download(this['name'].value, this['text'].value)">
+			<input type="text" name="name" id="fileName" value="text.txt">
+			<textarea rows=3 cols=50 name="text" id="copyText">Text Area</textarea>
+			<input type="submit" value="Download">
+		</form>
+
+	</body>
+
+</html>
